@@ -1,0 +1,3 @@
+#!/bin/bash
+cd ..
+/usr/lib/jvm/java-15-openjdk-amd64/bin/java -javaagent:/snap/intellij-idea-ultimate/266/lib/idea_rt.jar=40895:/snap/intellij-idea-ultimate/266/bin -Dfile.encoding=UTF-8 -classpath /home/muath/Workspaces/java/socket-programming/out/production/socket-programming udp.UdpServer
