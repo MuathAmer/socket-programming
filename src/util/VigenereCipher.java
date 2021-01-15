@@ -2,14 +2,16 @@ package util;
 
 public abstract class VigenereCipher {
 
-	public static final String DEFAULT_KEY = "muathtayma";
+	public static final String DEFAULT_KEY = "muathamer";
 
 	protected final String key;
-	protected int count;
+	
+//	Used to keep track of the index of current character at key to use for Vigenere
+	protected int keyCurrIdx;
 
 	public VigenereCipher(String key) {
 		this.key = key.toLowerCase();
-		this.count = 0;
+		this.keyCurrIdx = 0;
 	}
 
 }

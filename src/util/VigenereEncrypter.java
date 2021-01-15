@@ -10,14 +10,16 @@ public class VigenereEncrypter extends VigenereCipher {
 			if (!Character.isAlphabetic(buffer[i]))
 				continue;
 
-			int modifiedVal = buffer[i] + (key.charAt(count) - 'a');
-			if ((Character.isUpperCase(buffer[i]) ^ Character.isUpperCase(modifiedVal))
+			int modifiedVal = buffer[i] + (key.charAt(keyCurrIdx) - 'a');
+
+//			If character was uppercase and became lowercase, or if it got out of range
+			if ((Character.isUpperCase(buffer[i]) && Character.isLowerCase(modifiedVal))
 					|| modifiedVal > 'z' || (modifiedVal < 'a' && modifiedVal > 'Z'))
 				modifiedVal -= 26;
 
 			buffer[i] = (byte) modifiedVal;
 
-			count = (count + 1) % key.length();
+			keyCurrIdx = (keyCurrIdx + 1) % key.length();
 		}
 	}
 }
